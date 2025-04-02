@@ -45,7 +45,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
 
   //2.Cenário Login Email inválido mobile Iphone 14
-  it.only("Email invalido quando tenta acessar o Linkedin", () => {
+  it("Email invalido quando tenta acessar o Linkedin", () => {
        cy.visit('https://www.linkedin.com/login', {
          headers: {
             'User-Agent': "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) EdgiOS/120.0.0.0 Mobile/15E148 Safari/537.36",
@@ -63,7 +63,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
  
   //3.Cenário Login Senha inválido mobile Iphone 14
-  it("Senha invalida quando tenta acessar o Linkedin", () => {
+  it.only("Senha invalida quando tenta acessar o Linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
          'User-Agent': "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) EdgiOS/120.0.0.0 Mobile/15E148 Safari/537.36",
