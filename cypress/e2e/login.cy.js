@@ -85,7 +85,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 //4.Cenário Login Senha vazia mobile Iphone 14
-  it.only("Senha vazia quando tenta acessar o linkedin", () => {
+  it("Senha vazia quando tenta acessar o linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
          'User-Agent': "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) EdgiOS/120.0.0.0 Mobile/15E148 Safari/537.36",
@@ -107,7 +107,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
 
   //5.Cenário Login Email vazio mobile Iphone 14
-  it("Email vazio quando tenta acessar o Linkedin", () => {
+  it.only("Email vazio quando tenta acessar o Linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
          'User-Agent': "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) EdgiOS/120.0.0.0 Mobile/15E148 Safari/537.36",
