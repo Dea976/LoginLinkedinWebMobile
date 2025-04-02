@@ -6,13 +6,13 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 // funcionalidade
   describe("Teste no LinkedIn - iPhone 14 com Edge", () => {
-// Simula a resolução do iPhone 14 (390x844)
+// Simula a resoluÃ§Ã£o do iPhone 14 (390x844)
     beforeEach(() => {
       cy.viewport(390, 844);
     });
 
-  //1.Cenário Login dados com sucesso mobile Iphone 14
-  it("Login com sucesso", () => {
+  //1.CenÃ¡rio Login dados com sucesso mobile Iphone 14
+  it.only("Login com sucesso", () => {
   //DADO (Given)
   // abrir a aplicacao
        cy.visit('https://www.linkedin.com/login', {
@@ -21,30 +21,30 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     },
   });
     
-    // Esperando o campo de email aparecer e inserindo um email válido
+    // Esperando o campo de email aparecer e inserindo um email vÃ¡lido
        cy.get('input#username')
          .should('be.visible')
-         .type('digite seu email para testar'); // Substitua pelo seu email válido
+         .type('digite seu email para testar'); // Substitua pelo seu email vÃ¡lido
     
-    // Espera a página carregar e inserir a senha
+    // Espera a pÃ¡gina carregar e inserir a senha
        cy.get('input#password')
          .should('be.visible')
-         .type('digite sua senha para testar'); // Substitua pela sua senha válida
+         .type('digite sua senha para testar'); // Substitua pela sua senha vÃ¡lida
     
     // Quando (When)
-    // Clica no botão "Sign in"
+    // Clica no botÃ£o "Sign in"
        cy.get('button[type="submit"]').click();
 
-    //Então (Then)
-    // Verifica se a página do Linkedin é carregada
+    //EntÃ£o (Then)
+    // Verifica se a pÃ¡gina do Linkedin Ã© carregada
        cy.url().should('include', '/feed/');
 
-    // Verifica se a página do Linkedin está visível, após o login
+    // Verifica se a pÃ¡gina do Linkedin estÃ¡ visÃ­vel, apÃ³s o login
        cy.get('body').should('not.contain', 'Sign in');
     
   });
 
-  //2.Cenário Login Email inválido mobile Iphone 14
+  //2.CenÃ¡rio Login Email invÃ¡lido mobile Iphone 14
   it("Email invalido quando tenta acessar o Linkedin", () => {
        cy.visit('https://www.linkedin.com/login', {
          headers: {
@@ -54,7 +54,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
    
        cy.get('input#username')
          .should('be.visible')
-         .type('alfa'); // Email inválido
+         .type('alfa'); // Email invÃ¡lido
     
        cy.get('button[type="submit"]').click();
 
@@ -62,7 +62,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
   });
  
-  //3.Cenário Login Senha inválido mobile Iphone 14
+  //3.CenÃ¡rio Login Senha invÃ¡lido mobile Iphone 14
   it("Senha invalida quando tenta acessar o Linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
@@ -76,7 +76,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     
     cy.get('input#password')
       .should('be.visible')
-      .type('1223456'); //Senha Inválida 
+      .type('1223456'); //Senha InvÃ¡lida 
  
     cy.get('button[type="submit"]').click();
 
@@ -84,7 +84,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 });
 
-//4.Cenário Login Senha vazia mobile Iphone 14
+//4.CenÃ¡rio Login Senha vazia mobile Iphone 14
   it("Senha vazia quando tenta acessar o linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
@@ -106,7 +106,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
   });
 
-  //5.Cenário Login Email vazio mobile Iphone 14
+  //5.CenÃ¡rio Login Email vazio mobile Iphone 14
   it("Email vazio quando tenta acessar o Linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
@@ -128,7 +128,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
   });
 
-  //6.Cenário Login Email e Senha vazios mobile Iphone 14
+  //6.CenÃ¡rio Login Email e Senha vazios mobile Iphone 14
   it.("Email e senha vazios quando tenta acessar o Linkedin", () => {
     cy.visit('https://www.linkedin.com/login', {
       headers: {
